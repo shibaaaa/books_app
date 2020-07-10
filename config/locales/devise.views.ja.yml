@@ -1,0 +1,20 @@
+ja:
+  users:
+    show:
+      title: プロフィール
+    update:
+      title: プロフィールの編集
+  activerecord:
+    attributes:
+      user:
+        name: ユーザー名
+        postal: 郵便番号
+        address: 住所
+        introduction: 自己紹介
+  Logged in as: でログイン中
+  Profile: プロフィール
+  Edit profile: プロフィール編集
+  Logout: ログアウト
+  Sign up: アカウント登録
+  Login: ログイン
+  Log in: ログイン
