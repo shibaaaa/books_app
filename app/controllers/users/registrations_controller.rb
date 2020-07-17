@@ -63,8 +63,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
       user_path(id: current_user.id)
     end
 
-  # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+    # The path used after sign up for inactive accounts.
+    # def after_inactive_sign_up_path_for(resource)
+    #   super(resource)
+    # end
+
+    # プロフィール編集時、password入力をなくす
+    def update_resource(resource, params)
+      resource.update_without_current_password(params)
+    end
 end
