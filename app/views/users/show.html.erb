@@ -3,6 +3,9 @@
   <strong><%= User.human_attribute_name(:name) + ":" %></strong>
   <%= @user.name %>
 </p>
+<% if @user.avatar.attached? %>
+<%= image_tag(@user.avatar) %>
+<% end %>
 <p>
   <strong><%= User.human_attribute_name(:email) + ":" %></strong>
   <%= @user.email %>
