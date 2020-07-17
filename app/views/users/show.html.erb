@@ -4,7 +4,7 @@
   <%= @user.name %>
 </p>
 <% if @user.avatar.attached? %>
-<%= image_tag(@user.avatar) %>
+<%= image_tag(@user.avatar.variant(resize_to_fit: [150, 150])) %>
 <% end %>
 <p>
   <strong><%= User.human_attribute_name(:email) + ":" %></strong>
