@@ -10,6 +10,7 @@ class BooksController < ApplicationController
 
   # GET /books/1
   def show
+    current_user.books.find(params[:id])
   end
 
   # GET /books/new
@@ -19,11 +20,12 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
+    current_user.books.find(params[:id])
   end
 
   # POST /books
   def create
-    @book = Book.new(book_params)
+    @book = current_user.books.new(book_params)
     if @book.save
       redirect_to @book, notice: t("flash.create")
     else
@@ -33,7 +35,8 @@ class BooksController < ApplicationController
 
   # PATCH/PUT /books/1
   def update
-    if @book.update(book_params)
+    if @book = current_user.books.find(params[:id])
+      @book.update(book_params)
       redirect_to @book, notice: t("flash.update")
     else
       render :edit
@@ -42,6 +45,7 @@ class BooksController < ApplicationController
 
   # DELETE /books/1
   def destroy
+    @book = current_user.books.find(params[:id])
     @book.destroy
     redirect_to books_url, notice: t("flash.destroy")
   end
