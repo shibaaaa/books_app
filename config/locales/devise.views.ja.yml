@@ -1,5 +1,7 @@
 ja:
   users:
+    index:
+      title: ユーザー一覧
     show:
       title: プロフィール
     update:
@@ -19,3 +21,4 @@ ja:
   Sign up: アカウント登録
   Login: ログイン
   Log in: ログイン
+  All users: ユーザー一覧

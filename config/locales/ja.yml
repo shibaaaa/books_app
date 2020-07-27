@@ -19,16 +19,18 @@ ja:
         picture: 画像
   link:
     New Book: 新規作成
-    Back: 戻る
+    Back: トップに戻る
     Show: 詳細
     Edit: 編集
-    Destroy: 削除
+    Destroy: 削除 
   flash:
     create: "本が保存されました"
     update: "本が更新されました"
     destroy: "本が削除されました"
   alert:
     sure: "本当によろしいですか？"
+  Follow: フォローする
+  Unfollow: フォロー解除
   Books: 本
   New Book: 新規作成
   Editing Book: 編集
