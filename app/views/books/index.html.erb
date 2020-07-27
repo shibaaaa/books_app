@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th><%= Book.human_attribute_name(:user_name) %></th>
       <th><%= Book.human_attribute_name(:title) %></th>
       <th><%= Book.human_attribute_name(:memo) %></th>
       <th><%= Book.human_attribute_name(:picture) %></th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @books.each do |book| %>
       <tr>
+        <td><%= link_to book.user.name, user_path(id: book.user_id) %></td>
         <td><%= book.title %></td>
         <td><%= book.memo %></td>
         <td><%= book.picture %></td>

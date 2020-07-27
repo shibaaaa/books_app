@@ -11,6 +11,7 @@ ja:
       book: 本
     attributes:
       book:
+        user_name: 投稿者
         title: タイトル
         memo: メモ
         created_at: 作成日時

@@ -5,7 +5,7 @@ class BooksController < ApplicationController
 
   # GET /books
   def index
-    @books = Book.page(params[:page])
+    @books = Book.where(user_id: current_user.following).or(Book.where(user_id: current_user)).page(params[:page])
   end
 
   # GET /books/1
