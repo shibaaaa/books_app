@@ -11,6 +11,7 @@ ja:
       book: 本
     attributes:
       book:
+        user_name: 投稿者
         title: タイトル
         memo: メモ
         created_at: 作成日時
@@ -19,16 +20,25 @@ ja:
         picture: 画像
   link:
     New Book: 新規作成
+    Top: トップ
     Back: 戻る
     Show: 詳細
     Edit: 編集
-    Destroy: 削除
+    Destroy: 削除 
   flash:
     create: "本が保存されました"
     update: "本が更新されました"
     destroy: "本が削除されました"
   alert:
     sure: "本当によろしいですか？"
+  followings: 
+    index:
+      title: "%{user}のフォロー"
+  followers: 
+    index:
+      title: "%{user}のフォロワー"
+  Follow: フォローする
+  Unfollow: フォロー解除
   Books: 本
   New Book: 新規作成
   Editing Book: 編集

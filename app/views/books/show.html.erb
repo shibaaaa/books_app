@@ -13,6 +13,7 @@
   <strong><%= Book.human_attribute_name(:picture) %>:</strong>
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
-
-<%= link_to t("link.Edit"), edit_book_path(@book) %> |
+<% if @book.user_id == current_user.id %>
+  <%= link_to t("link.Edit"), edit_book_path(@book) %> |
+<% end %>
 <%= link_to t("link.Back"), books_path %>

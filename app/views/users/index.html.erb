@@ -1,0 +1,10 @@
+<h1><%= t("users.index.title") %></h1>
+  <ul class="users">
+    <% @users.each do |user| %>
+    <li>
+      <%= link_to user.name, user %>
+    </li>
+    <% end %>
+  </ul>
+
+<%= link_to t("link.Top"), root_path %>
