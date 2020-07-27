@@ -10,7 +10,6 @@ class BooksController < ApplicationController
 
   # GET /books/1
   def show
-    current_user.books.find(params[:id])
   end
 
   # GET /books/new
