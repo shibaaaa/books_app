@@ -19,7 +19,8 @@ ja:
         picture: 画像
   link:
     New Book: 新規作成
-    Back: トップに戻る
+    Top: トップ
+    Back: 戻る
     Show: 詳細
     Edit: 編集
     Destroy: 削除 
@@ -29,6 +30,12 @@ ja:
     destroy: "本が削除されました"
   alert:
     sure: "本当によろしいですか？"
+  followings: 
+    index:
+      title: "%{user}のフォロー"
+  followers: 
+    index:
+      title: "%{user}のフォロワー"
   Follow: フォローする
   Unfollow: フォロー解除
   Books: 本

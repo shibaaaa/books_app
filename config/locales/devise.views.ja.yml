@@ -4,6 +4,8 @@ ja:
       title: ユーザー一覧
     show:
       title: プロフィール
+      follow: フォロー
+      follower: フォロワー
     update:
       title: プロフィールの編集
   activerecord:
