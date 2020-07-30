@@ -19,6 +19,7 @@
 <% end %>
 
 <%= render "comments/comments", commentable: @book %>
+<h3><%= t("New Comment")%></h3>
 <%= render "comments/form", commentable: @book, comment: @book.comments.new %>
 
 <%= link_to t("link.Back"), books_path %>
