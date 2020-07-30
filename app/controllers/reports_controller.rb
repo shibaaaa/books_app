@@ -4,7 +4,7 @@ class ReportsController < ApplicationController
   before_action :set_report, only: [:show, :edit, :update, :destroy]
 
   def index
-    @reports = Report.all
+    @reports = Report.where(user_id: current_user.following).or(Report.where(user_id: current_user)).page(params[:page])
   end
 
   def show

@@ -1,0 +1,7 @@
+<h3><%= t("New Comment")%></h3>
+<%= form_with(model: [commentable, comment]) do |f| %>
+<%= f.text_area :content %>
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>

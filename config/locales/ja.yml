@@ -23,6 +23,8 @@ ja:
       report:
         title: タイトル
         content: 内容
+      comment:
+        content: 内容
   reports: 
     index:
       title: 日報一覧
@@ -36,6 +38,17 @@ ja:
       notice: 日報を更新しました
     destroy:
       notice: 日報が削除されました
+  comments:
+    index:
+      title: コメント
+    created:
+      notice: コメントを投稿しました
+    update:
+      title: コメントの編集
+    updated:
+      notice: コメントを更新しました
+    destroy:
+      notice: コメントが削除されました
   link:
     New: 新規作成
     Top: トップ
@@ -61,6 +74,8 @@ ja:
   New Book: 新規作成
   Editing Book: 編集
   Reports: 日報
+  Comments: コメント
+  New Comment: コメントを書く
   date:
     abbr_day_names:
     - 日
