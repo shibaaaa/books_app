@@ -18,8 +18,39 @@ ja:
         updated_at: 更新日時
         author: 著者
         picture: 画像
+      user:
+        user_name: 投稿者
+      report:
+        title: タイトル
+        content: 内容
+      comment:
+        content: 内容
+  reports: 
+    index:
+      title: 日報一覧
+    create:
+      title: 日報の新規作成
+    created:
+      notice: 日報を登録しました
+    update:
+      title: 日報の編集
+    updated:
+      notice: 日報を更新しました
+    destroy:
+      notice: 日報が削除されました
+  comments:
+    index:
+      title: コメント
+    created:
+      notice: コメントを投稿しました
+    update:
+      title: コメントの編集
+    updated:
+      notice: コメントを更新しました
+    destroy:
+      notice: コメントが削除されました
   link:
-    New Book: 新規作成
+    New: 新規作成
     Top: トップ
     Back: 戻る
     Show: 詳細
@@ -30,7 +61,7 @@ ja:
     update: "本が更新されました"
     destroy: "本が削除されました"
   alert:
-    sure: "本当によろしいですか？"
+    sure: "削除してよろしいですか？"
   followings: 
     index:
       title: "%{user}のフォロー"
@@ -42,6 +73,9 @@ ja:
   Books: 本
   New Book: 新規作成
   Editing Book: 編集
+  Reports: 日報
+  Comments: コメント
+  New Comment: コメントを書く
   date:
     abbr_day_names:
     - 日

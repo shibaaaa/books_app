@@ -1,0 +1,21 @@
+<p>
+  <strong><%= Report.human_attribute_name(:title) %>:</strong>
+  <%= @report.title %>
+</p>
+
+<p>
+  <strong><%= Report.human_attribute_name(:content) %>:</strong>
+  <%= @report.content %>
+</p>
+
+<% if @user_id == current_user.id %>
+  <%= link_to t("link.Edit"), edit_report_path(@report) %> |
+  <%= link_to t("link.Destroy"), @repot, method: :delete, data: { confirm: t("alert.sure") } %> |
+<% end %>
+
+<%= render "comments/comments", commentable: @report %>
+<h3><%= t("New Comment")%></h3>
+<%= render "comments/form", commentable: @report, comment: @report.comments.new %>
+
+<%= link_to t("link.Back"), reports_path %> |
+<%= link_to t("link.Top"), root_path %>
