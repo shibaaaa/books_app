@@ -21,7 +21,7 @@ class User < ApplicationRecord
 
   def self.find_for_github_oauth(auth, signed_in_resource = nil)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = User.dummy_email(auth)
+      user.email = auth.info.email(auth)
       user.password = Devise.friendly_token[0, 20]
       user.name = auth.info.name
     end
@@ -55,9 +55,4 @@ class User < ApplicationRecord
   def following?(other_user)
     following.include?(other_user)
   end
-
-  private
-    def self.dummy_email(auth)
-      "#{auth.uid}-#{auth.provider}@example.com"
-    end
 end
