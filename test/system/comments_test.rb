@@ -50,11 +50,11 @@ class CommentsTest < ApplicationSystemTestCase
 
   test "日報へのコメントが更新ができること" do
     visit edit_report_comment_path(@report, @report_comment)
-    fill_in "内容", with: "コメント更新しました"
+    fill_in "内容", with: "これはコメント更新"
     click_on "更新する"
 
     assert_text "コメントを更新しました"
-    assert_text "コメント更新"
+    assert_text "これはコメント更新"
   end
 
   test "本へのコメントを削除ができること" do
