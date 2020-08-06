@@ -13,8 +13,10 @@
       <td><%= comment.user.name %></td>
       <td><%= comment.content %></td>
       <% if comment.user == current_user %>
-        <td><%= link_to t("link.edit"), [:edit, comment.commentable, comment] %></td>
-        <td><%= link_to t("link.destroy"), [comment.commentable, comment], method: :delete, data: { confirm: t("alert.sure") } %></td>
+        <td><%= link_to t("link.Edit"), [:edit, comment.commentable, comment] %></td>
+        <td id="delete_comment">
+          <%= link_to t("link.Destroy"), [comment.commentable, comment], method: :delete, data: { confirm: t("alert.sure") } %>
+        </td>
       <% end %>
     </tr>
     <% end %>

@@ -1,0 +1,9 @@
+comment_1:
+  content: コメントです
+  commentable: book_1(Book)
+  user: user_1
+
+comment_2:
+  content: これはコメント
+  commentable: report_1(Report)
+  user: user_1

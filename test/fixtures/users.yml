@@ -1,8 +1,8 @@
 <% 3.times do |n| %>
-user_<%= n %>:
-  name: <%= "ユーザー#{n}" %>
-  email: <%= "user#{n}@example.com" %>
-  encrypted_password: <%= "#{n}" %>
-  uid: <%= "#{n}" %>
-  provider: "github"
+  user_<%= n %>:
+    name: <%= "ユーザー#{n}" %>
+    email: <%= "user#{n}@example.com" %>
+    encrypted_password: <%= "#{n}" %>
+    uid: <%= "#{n}" %>
+    provider: "github"
 <%end%>

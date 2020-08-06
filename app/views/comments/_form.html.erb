@@ -1,4 +1,5 @@
 <%= form_with(model: [commentable, comment]) do |f| %>
+<%= f.label :content %>
 <%= f.text_area :content %>
 <div class="actions">
   <%= f.submit %>
