@@ -41,7 +41,7 @@ class BooksTest < ApplicationSystemTestCase
     assert_text "本が更新されました"
   end
 
-  test "本を削除ができること" do
+  test "本を削除できること" do
     visit books_url
     page.accept_confirm do
       click_on "削除", match: :first

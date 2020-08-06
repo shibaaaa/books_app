@@ -57,7 +57,7 @@ class CommentsTest < ApplicationSystemTestCase
     assert_text "これはコメント更新"
   end
 
-  test "本へのコメントを削除ができること" do
+  test "本へのコメントを削除できること" do
     visit book_path(@book)
     page.accept_confirm do
       find("#delete_comment").click
@@ -67,7 +67,7 @@ class CommentsTest < ApplicationSystemTestCase
     assert_no_text "コメントです"
   end
 
-  test "日報へのコメントを削除ができること" do
+  test "日報へのコメントを削除できること" do
     visit report_path(@report)
     page.accept_confirm do
       find("#delete_comment").click
