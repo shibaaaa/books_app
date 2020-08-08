@@ -59,21 +59,25 @@ class CommentsTest < ApplicationSystemTestCase
 
   test "本へのコメントを削除できること" do
     visit book_path(@book)
-    page.accept_confirm do
-      find("#delete_comment").click
+    within (".comment_list") do
+      page.accept_confirm do
+        click_on "削除", match: :first
+      end
     end
 
     assert_text "コメントが削除されました"
-    assert_no_text "コメントです"
+    assert_no_text "この本は良本"
   end
 
   test "日報へのコメントを削除できること" do
     visit report_path(@report)
-    page.accept_confirm do
-      find("#delete_comment").click
+    within (".comment_list") do
+      page.accept_confirm do
+        click_on "削除", match: :first
+      end
     end
 
     assert_text "コメントが削除されました"
-    assert_no_text "これはコメント"
+    assert_no_text "お疲れ様でした"
   end
 end
