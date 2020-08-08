@@ -16,10 +16,10 @@
         <td><%= link_to report.user.name, user_path(report.user_id) %></td>
         <td><%= report.title %></td>
         <td><%= report.content %></td>
-        <td><%= link_to t("link.Show"), report %></td>
+        <td><%= link_to t("link.show"), report %></td>
         <% if report.user_id == current_user.id  %>
-          <td><%= link_to t("link.Edit"), edit_report_path(report) %></td>
-          <td><%= link_to t("link.Destroy"), report, method: :delete, data: { confirm: t("alert.sure") } %></td>
+          <td><%= link_to t("link.edit"), edit_report_path(report) %></td>
+          <td><%= link_to t("link.destroy"), report, method: :delete, data: { confirm: t("alert.sure") } %></td>
         <% end %>
       </tr>
     <% end %>
@@ -28,5 +28,5 @@
 
 <br>
 
-<%= link_to t("link.New"), new_report_path %> |
-<%= link_to t("link.Top"), root_path %>
+<%= link_to t("link.new"), new_report_path %> |
+<%= link_to t("link.top"), root_path %>
