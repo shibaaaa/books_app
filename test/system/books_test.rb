@@ -23,20 +23,22 @@ class BooksTest < ApplicationSystemTestCase
   test "本の作成ができること" do
     visit books_url
     click_on "新規作成"
-    fill_in "メモ", with: "メモ"
-    fill_in "タイトル", with: "タイトル"
+    fill_in "メモ", with: "Rails本の決定版"
+    fill_in "タイトル", with: "パーフェクトRails"
     click_on "登録"
 
+    assert_text "パーフェクトRails"
     assert_text "本が保存されました"
   end
 
   test "本の更新ができること" do
     visit edit_book_path(@book)
 
-    fill_in "メモ", with: "メモ更新"
-    fill_in "タイトル", with: "タイトル更新"
+    fill_in "メモ", with: "ページ数がすごい"
+    fill_in "タイトル", with: "パーフェクトRuby on Rails"
     click_on "更新する"
 
+    assert_text "パーフェクトRuby on Rails"
     assert_text "本が更新されました"
   end
 
