@@ -16,19 +16,18 @@ class BooksTest < ApplicationSystemTestCase
   test "本の詳細ページの表示ができること" do
     visit books_url
     click_on "詳細", match: :first
-    assert_text "MyString"
-    assert_text "MyText"
+    assert_text "チェリー本"
+    assert_text "Rubyの勉強ならコレは外せない"
   end
 
   test "本の作成ができること" do
     visit books_url
     click_on "新規作成"
-    fill_in "メモ", with: @book.memo
-    fill_in "タイトル", with: @book.title
+    fill_in "メモ", with: "メモ"
+    fill_in "タイトル", with: "タイトル"
     click_on "登録"
 
     assert_text "本が保存されました"
-    click_on "戻る"
   end
 
   test "本の更新ができること" do

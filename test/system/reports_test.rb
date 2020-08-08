@@ -17,19 +17,18 @@ class ReportsTest < ApplicationSystemTestCase
   test "日報の詳細ページの表示ができること" do
     visit reports_path
     click_on "詳細", match: :first
-    assert_text "日報タイトル"
-    assert_text "日報の内容"
+    assert_text "今日の成果"
+    assert_text "今日は集中して勉強できた"
   end
 
   test "日報の作成ができること" do
     visit reports_path
     click_on "新規作成"
-    fill_in "タイトル", with: @report.title
-    fill_in "内容", with: @report.content
+    fill_in "タイトル", with: "タイトル"
+    fill_in "内容", with: "内容"
     click_on "登録"
 
     assert_text "日報を登録しました"
-    click_on "戻る"
   end
 
   test "日報の更新ができること" do

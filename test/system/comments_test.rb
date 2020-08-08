@@ -13,12 +13,12 @@ class CommentsTest < ApplicationSystemTestCase
 
   test "本へのコメントが表示できること" do
     visit book_path(@book)
-    assert_text "コメントです"
+    assert_text "この本は良本"
   end
 
   test "日報へのコメントが表示できること" do
     visit report_path(@report)
-    assert_text "これはコメント"
+    assert_text "お疲れ様でした"
   end
 
   test "本へのコメント投稿ができること" do
