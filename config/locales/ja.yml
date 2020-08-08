@@ -3,7 +3,7 @@ ja:
   activerecord:
     errors:
       messages:
-        record_invalid: 'バリデーションに失敗しました: %{errors}'
+        record_invalid: "バリデーションに失敗しました: %{errors}"
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
@@ -50,12 +50,12 @@ ja:
     destroy:
       notice: コメントが削除されました
   link:
-    New: 新規作成
-    Top: トップ
-    Back: 戻る
-    Show: 詳細
-    Edit: 編集
-    Destroy: 削除 
+    new: 新規作成
+    top: トップ
+    back: 戻る
+    show: 詳細
+    edit: 編集
+    destroy: 削除 
   flash:
     create: "本が保存されました"
     update: "本が更新されました"
