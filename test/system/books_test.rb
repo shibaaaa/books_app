@@ -4,44 +4,50 @@ require "application_system_test_case"
 
 class BooksTest < ApplicationSystemTestCase
   setup do
-    @book = books(:one)
+    @book = books(:book_1)
+    login_as users(:user_1)
   end
 
-  test "visiting the index" do
+  test "本一覧ページの表示ができること" do
     visit books_url
-    assert_selector "h1", text: "Books"
+    assert_selector "h1", text: "本"
   end
 
-  test "creating a Book" do
+  test "本の詳細ページの表示ができること" do
     visit books_url
-    click_on "New Book"
-
-    fill_in "Memo", with: @book.memo
-    fill_in "Title", with: @book.title
-    click_on "Create Book"
-
-    assert_text "Book was successfully created"
-    click_on "Back"
+    click_on "詳細", match: :first
+    assert_text "チェリー本"
+    assert_text "Rubyの勉強ならコレは外せない"
   end
 
-  test "updating a Book" do
+  test "本の作成ができること" do
     visit books_url
-    click_on "Edit", match: :first
+    click_on "新規作成"
+    fill_in "メモ", with: "Rails本の決定版"
+    fill_in "タイトル", with: "パーフェクトRails"
+    click_on "登録"
 
-    fill_in "Memo", with: @book.memo
-    fill_in "Title", with: @book.title
-    click_on "Update Book"
-
-    assert_text "Book was successfully updated"
-    click_on "Back"
+    assert_text "パーフェクトRails"
+    assert_text "本が保存されました"
   end
 
-  test "destroying a Book" do
+  test "本の更新ができること" do
+    visit edit_book_path(@book)
+
+    fill_in "メモ", with: "ページ数がすごい"
+    fill_in "タイトル", with: "パーフェクトRuby on Rails"
+    click_on "更新する"
+
+    assert_text "パーフェクトRuby on Rails"
+    assert_text "本が更新されました"
+  end
+
+  test "本を削除できること" do
     visit books_url
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on "削除", match: :first
     end
 
-    assert_text "Book was successfully destroyed"
+    assert_text "本が削除されました"
   end
 end
