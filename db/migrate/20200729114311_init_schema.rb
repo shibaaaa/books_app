@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class InitSchema < ActiveRecord::Migration[6.0]
   def up
     create_table "active_storage_attachments" do |t|
