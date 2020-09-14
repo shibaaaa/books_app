@@ -9,7 +9,7 @@ p
 p
   = link_to t("users.show.follow"), user_followings_path(@user)
   = @user.following.count
-  |  | 
+    |  |
   = link_to t("users.show.follower"), user_followers_path(@user)
   = @user.followers.count
 = render "follow_form"
