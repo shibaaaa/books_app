@@ -1,0 +1,25 @@
+p
+  strong
+    = Book.human_attribute_name(:title)
+    | :
+  = @book.title
+p
+  strong
+    = Book.human_attribute_name(:memo)
+    | :
+  = @book.memo
+p
+  strong
+    = Book.human_attribute_name(:picture)
+    | :
+  = image_tag(@book.picture_url) if @book.picture.present?
+- if @book.user_id == current_user.id
+  = link_to t("link.Edit"), edit_book_path(@book)
+  |  | 
+  = link_to t("link.Destroy"), @book, method: :delete, data: { confirm: t("alert.sure") }
+  |  | 
+= render "comments/comments", commentable: @book
+h3
+  = t("New Comment")
+= render "comments/form", commentable: @book, comment: @book.comments.new
+= link_to t("link.Back"), books_path

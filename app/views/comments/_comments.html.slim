@@ -1,0 +1,22 @@
+h3
+  = t("comments.index.title")
+table
+  thead
+    tr
+      th
+        = User.human_attribute_name(:user_name)
+      th
+        = Comment.human_attribute_name(:content)
+      th[colspan="3"]
+  tbody.comment_list
+    - commentable.comments.each do |comment|
+      tr
+        td
+          = comment.user.name
+        td
+          = comment.content
+        - if comment.user == current_user
+          td
+            = link_to t("link.edit"), [:edit, comment.commentable, comment]
+          td
+            = link_to t("link.destroy"), [comment.commentable, comment], method: :delete, data: { confirm: t("alert.sure") }

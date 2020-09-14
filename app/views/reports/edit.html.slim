@@ -1,0 +1,6 @@
+h1
+  = t("reports.update.title")
+= render 'form', report: @report
+= link_to t("link.show"), @report
+|  | 
+= link_to t("link.back"), reports_path
