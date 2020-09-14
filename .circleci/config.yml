@@ -20,6 +20,11 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+          
+      - run: gem install bundler -v $BUNDLER_VERSION
+      - run:
           name: Update bundler
           command: gem update bundler
 
@@ -32,11 +37,7 @@ jobs:
           keys:
             - asset-cache-{{ arch }}-{{ .Branch }}
             - asset-cache-
-      - run: bundle exec rails assets:precompile
-      
-      - run:
-          name: Bundle Install
-          command: bundle check || bundle install
+      - run: bin/rails assets:precompile
 
       - save_cache:
           key: rails-demo-bundle-v2-{{ checksum "Gemfile.lock" }}
@@ -68,10 +69,9 @@ jobs:
       - run:
           name: Rails test
           command: |
+            bin/rails webpacker:compile
             bin/rails test
             bin/rails test test/system
 
-      # Save test results for timing analysis
       - store_test_results:
           path: test_results
-      # See https://circleci.com/docs/2.0/deployment-integrations/ for example deploy configs
