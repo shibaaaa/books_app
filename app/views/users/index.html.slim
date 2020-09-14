@@ -1,0 +1,7 @@
+h1
+  = t("users.index.title")
+ul.users
+  - @users.each do |user|
+    li
+      = link_to user.name, user
+= link_to t("link.top"), root_path

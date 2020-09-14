@@ -12,10 +12,10 @@ class FollowsTest < ApplicationSystemTestCase
   test "フォローすることとフォロー解除すること" do
     visit user_path(@other)
     click_on "フォローする"
-    assert_text "フォロワー 1"
+    assert_text "フォロワー1"
 
     click_on "フォロー解除"
-    assert_text "フォロワー 0"
+    assert_text "フォロワー0"
   end
 
   test "フォロー一覧ページが表示できること" do
